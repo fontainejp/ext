@@ -1,5 +1,5 @@
-// Blocs réalisés avec BLOCKLY-FACTORY
-
+// Mes Blocs
+var toto = 123
 Blockly.Blocks['button_is_pressed']={init:function(){
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("media/factory/gamepad.png", 28, 28, "*"))
