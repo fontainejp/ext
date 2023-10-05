@@ -1,5 +1,7 @@
 // Mes Blocs
+
 var mes_blocs = ['button_is_pressed','print_message','ir_remote','vitesse_serie']
+
 Blockly.Blocks['button_is_pressed']={init:function(){
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("media/factory/gamepad.png", 28, 28, "*"))
