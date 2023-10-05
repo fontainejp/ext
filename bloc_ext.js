@@ -13,14 +13,14 @@ Blockly.Blocks['button_is_pressed']={init:function(){
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour('#FF00FF')}
-};
+}
 Blockly.Arduino['button_is_pressed']=function(block){
     var value_statement = Blockly.Arduino.statementToCode(block, '_statement');
     var value_dropdown = block.getFieldValue('_dropdown');
     Blockly.Arduino.includes_['lib'] = '#include "Esplora.h";';
     var code = 'if (Esplora.readButton('+value_dropdown+')) {\n  '+value_statement+'\n};';
     return code
-};
+}
   
 ////////////////////
 Blockly.Blocks['print_message']={init:function(){
@@ -36,14 +36,14 @@ Blockly.Blocks['print_message']={init:function(){
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour(120)}
-};
+}
 Blockly.Arduino['print_message']=function(block){
     var value_text = block.getFieldValue('_dropdown');
     var value_block = Blockly.Arduino.valueToCode(block, '_block', Blockly.Arduino.ORDER_ATOMIC);
     Blockly.Arduino.setups_['setup'] = 'Serial.begin('+value_block+');';
     var code = 'Serial.println("'+value_text+'");\n';
     return code
-};
+}
   
 ////////////////////
 Blockly.Blocks['ir_remote']={init:function(){
@@ -60,7 +60,7 @@ Blockly.Blocks['ir_remote']={init:function(){
         .appendField("reception");
     this.setInputsInline(false);
     this.setColour('#FFD700')}
-};
+}
 Blockly.Arduino['ir_remote']=function(block){
     var value_check = block.getFieldValue('_check') == 'TRUE';
     var value_block = Blockly.Arduino.valueToCode(block, '_block', Blockly.Arduino.ORDER_ATOMIC);
@@ -71,7 +71,7 @@ Blockly.Arduino['ir_remote']=function(block){
 	}
     Blockly.Arduino.setups_['setup'] = 'irrecv.enableIRIn();';
     return ''
-};
+}
   
 ////////////////////
 Blockly.Blocks['vitesse_serie']={init:function(){
@@ -81,11 +81,11 @@ Blockly.Blocks['vitesse_serie']={init:function(){
     this.setInputsInline(false);
     this.setOutput(true, "Number");
     this.setColour('#00929f')}
-};
+}
 Blockly.Arduino['vitesse_serie']=function(block){
     var value_dropdown = block.getFieldValue('_dropdown');
     var code = value_dropdown;
     return [code, Blockly.Arduino.ORDER_ATOMIC];
-};
+}
     
 ////////////////////
