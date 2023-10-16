@@ -1,6 +1,6 @@
 // Mes blocs
 
-var mes_blocs = ['pi']
+mes_blocs = ['pi']
 
 ////////////////////
 Blockly.Blocks['pi']={init:function(){
