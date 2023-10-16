@@ -1,6 +1,6 @@
 // Mes Blocs
 
-var mes_blocs = ['button_is_pressed','print_message','ir_remote','vitesse_serie','gros_bloc']
+mes_blocs = ['button_is_pressed','print_message','ir_remote','vitesse_serie','gros_bloc']
 
 Blockly.Blocks['button_is_pressed']={init:function(){
     this.appendDummyInput()
