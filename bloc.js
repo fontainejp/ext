@@ -1,7 +1,4 @@
-// Mes Blocs
-
-mes_blocs = ['button_is_pressed','print_message','ir_remote','vitesse_serie','gros_bloc']
-
+//////////////
 Blockly.Blocks['button_is_pressed']={init:function(){
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("media/factory/gamepad.png", 28, 28, "*"))
@@ -14,6 +11,7 @@ Blockly.Blocks['button_is_pressed']={init:function(){
     this.setNextStatement(true);
     this.setColour('#FF00FF')}
 }
+
 Blockly.Arduino['button_is_pressed']=function(block){
     var value_statement = Blockly.Arduino.statementToCode(block, '_statement');
     var value_dropdown = block.getFieldValue('_dropdown');
@@ -22,7 +20,7 @@ Blockly.Arduino['button_is_pressed']=function(block){
     return code
 }
   
-////////////////////
+//////////////
 Blockly.Blocks['print_message']={init:function(){
     this.appendDummyInput()
         .appendField("envoyer")
@@ -37,6 +35,7 @@ Blockly.Blocks['print_message']={init:function(){
     this.setNextStatement(true);
     this.setColour(120)}
 }
+
 Blockly.Arduino['print_message']=function(block){
     var value_text = block.getFieldValue('_dropdown');
     var value_block = Blockly.Arduino.valueToCode(block, '_block', Blockly.Arduino.ORDER_ATOMIC);
@@ -45,7 +44,7 @@ Blockly.Arduino['print_message']=function(block){
     return code
 }
   
-////////////////////
+//////////////
 Blockly.Blocks['ir_remote']={init:function(){
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("media/factory/keyboard-o.png", 14, 14, "*"))
@@ -61,6 +60,7 @@ Blockly.Blocks['ir_remote']={init:function(){
     this.setInputsInline(false);
     this.setColour('#FFD700')}
 }
+
 Blockly.Arduino['ir_remote']=function(block){
     var value_check = block.getFieldValue('_check') == 'TRUE';
     var value_block = Blockly.Arduino.valueToCode(block, '_block', Blockly.Arduino.ORDER_ATOMIC);
@@ -73,7 +73,7 @@ Blockly.Arduino['ir_remote']=function(block){
     return ''
 }
   
-////////////////////
+//////////////
 Blockly.Blocks['vitesse_serie']={init:function(){
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["1200", "1200"], ["9600", "9600"], ["19200", "19200"], ["31250", "31250"], ["57600", "57600"]]), "_dropdown")
@@ -82,13 +82,14 @@ Blockly.Blocks['vitesse_serie']={init:function(){
     this.setOutput(true, "Number");
     this.setColour('#00929f')}
 }
+
 Blockly.Arduino['vitesse_serie']=function(block){
     var value_dropdown = block.getFieldValue('_dropdown');
     var code = value_dropdown;
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
     
-////////////////////
+//////////////
 Blockly.Blocks['gros_bloc']={init:function(){ 
 	this.appendDummyInput() 
 		.appendField(new Blockly.FieldImage("media/factory/star-o.png", 25, 25, "*")) 
@@ -118,6 +119,7 @@ Blockly.Blocks['gros_bloc']={init:function(){
 	this.setInputsInline(false); 
 	this.setColour('#4488FF')} 
 }
+
 Blockly.Arduino['gros_bloc']=function(block){
   var value_text = block.getFieldValue('_text');
   var value_dropdown = block.getFieldValue('_dropdown');
