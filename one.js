@@ -1,16 +1,12 @@
-// Mes blocs
-
-mes_blocs = ['pi']
-
-////////////////////
-Blockly.Blocks['pi']={init:function(){
+//////////////
+Blockly.Blocks['phi']={init:function(){
     this.appendDummyInput()
-        .appendField("3.14");
+        .appendField("phi");
     this.setInputsInline(false);
     this.setOutput(true, "Number");
     this.setColour('#00CC00')}
 }
-Blockly.Arduino['pi']=function(block){
-    return ["3.14", Blockly.Arduino.ORDER_ATOMIC];
+
+Blockly.Arduino['phi']=function(block){
+    return ["500", Blockly.Arduino.ORDER_ATOMIC];
 }
-////////////////////
